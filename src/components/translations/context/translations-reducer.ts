@@ -1,5 +1,4 @@
-import { TranslationsState } from '.';
-import { TranslationLocale, Translations } from '..';
+import { TranslationLocale, Translations, TranslationsState } from '..';
 
 type TranslationsActionType =
   | {

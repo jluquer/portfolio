@@ -1,6 +1,10 @@
 import { FC, ReactNode, useReducer, createContext } from 'react';
-import { translationsReducer } from '.';
-import { TranslationLocale, Translations, defaultLang, translate } from '..';
+import {
+  TranslationLocale,
+  Translations,
+  translate,
+  translationsReducer,
+} from '..';
 
 interface ContextProps {
   currentLang: TranslationLocale;
@@ -16,7 +20,8 @@ export interface TranslationsState {
   t: Translations;
 }
 
-const TRANSLATIONS_INITIAL_STATE: TranslationsState = {
+const defaultLang: TranslationLocale = 'es';
+const translationsInitialState: TranslationsState = {
   currentLang: defaultLang,
   t: await translate(defaultLang),
 };
@@ -28,7 +33,7 @@ interface ProviderProps {
 export const TranslationsProvider: FC<ProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(
     translationsReducer,
-    TRANSLATIONS_INITIAL_STATE,
+    translationsInitialState,
   );
 
   const setLang = (lang: TranslationLocale) => {
