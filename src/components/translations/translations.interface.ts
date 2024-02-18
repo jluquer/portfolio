@@ -29,7 +29,7 @@ interface Basics {
   phone: string;
   url: string;
   location: Location;
-  profiles: Array<Profiles>;
+  profiles: Array<Profile>;
 }
 
 interface Location {
@@ -40,9 +40,8 @@ interface Location {
   region: string;
 }
 
-interface Profiles {
+export interface Profile {
   network: string;
-  username: string;
   url: string;
 }
 

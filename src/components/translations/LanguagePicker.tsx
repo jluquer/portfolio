@@ -12,13 +12,18 @@ import {
   DropdownMenuTrigger,
 } from '../ui';
 
-export function LanguagePicker() {
-  const { currentLang, setLang, setTranslations } = useTranslations();
+interface Props {
+  size?: number;
+}
 
+export function LanguagePicker({ size }: Props) {
+  const { currentLang, setLang, setTranslations } = useTranslations();
   const onChangeLang = async (lang: TranslationLocale) => {
     setLang(lang);
     setTranslations(await translate(lang));
   };
+
+  const LangIcon = langs.find((lang) => lang.value === currentLang)?.Icon;
 
   return (
     <div>
@@ -27,10 +32,14 @@ export function LanguagePicker() {
           <Button
             variant='ghost'
             size='icon'
-            className='hover:bg-slate-300'
             title={`Selected language ${currentLang}`}
           >
-            {langs.find((lang) => lang.value === currentLang)?.icon}
+            {LangIcon && (
+              <LangIcon
+                width={size}
+                height={size}
+              />
+            )}
             <span className='sr-only'>Set language</span>
           </Button>
         </DropdownMenuTrigger>

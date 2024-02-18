@@ -6,7 +6,7 @@ export function About() {
   const { title, summary } = t.cvSections.about;
   return (
     <Section title={title}>
-      <p>{summary}</p>
+      <p className='section-text'>{summary}</p>
     </Section>
   );
 }

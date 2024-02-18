@@ -23,7 +23,7 @@ export interface TranslationsState {
 const defaultLang: TranslationLocale = 'es';
 const translationsInitialState: TranslationsState = {
   currentLang: defaultLang,
-  t: await translate(defaultLang),
+  t: (await translate(defaultLang)) ?? {},
 };
 
 interface ProviderProps {

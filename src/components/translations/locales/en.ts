@@ -6,7 +6,7 @@ export const t: Translations = {
     label:
       'Full-Stack developer with more than 3 years of experience',
     image: '/me.webp',
-    email: 'javier_lr96@gmail.com',
+    email: 'javier.lr96@gmail.com',
     phone: '+34 664861333',
     url: '',
     location: {
@@ -19,12 +19,10 @@ export const t: Translations = {
     profiles: [
       {
         network: 'LinkedIn',
-        username: 'jluquer',
         url: 'https://linkedin.com/in/jluquer',
       },
       {
         network: 'GitHub',
-        username: 'jluquer',
         url: 'https://github.com/jluquer',
       },
     ],
