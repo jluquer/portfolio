@@ -1,7 +1,11 @@
 export interface Translations {
+  general: {
+    view: string;
+    present: string;
+  };
   basics: Basics;
   cvSections: {
-    about: { title: string; summary: string };
+    about: { title: string; summary: string[] };
     experience: CVSection<Job>;
     volunteer?: CVSection<Volunteer>;
     education: CVSection<Education>;
@@ -97,13 +101,10 @@ interface Publications {
 
 interface Education {
   institution: string;
-  url: string;
-  area: string;
-  studyType: string;
+  degree: string;
   startDate: DateStr;
-  endDate: DateStr;
-  score: string;
-  courses: Array<string>;
+  endDate?: DateStr;
+  summary?: string;
 }
 
 interface Languages {
@@ -126,8 +127,7 @@ type Language =
   | 'Russian'
   | 'Turkish'
   | 'Hindi'
-  | 'Bengali'
-  | string;
+  | 'Bengali';
 
 interface Projects {
   name: string;

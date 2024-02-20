@@ -1,10 +1,13 @@
 import { Translations } from '@/components/translations';
 
 export const t: Translations = {
+  general: {
+    view: 'View',
+    present: 'Present',
+  },
   basics: {
     name: 'Javier Luque Rodríguez',
-    label:
-      'Full-Stack developer with more than 3 years of experience',
+    label: 'Full-Stack developer with more than 3 years of experience',
     image: '/me.webp',
     email: 'javier.lr96@gmail.com',
     phone: '+34 664861333',
@@ -30,8 +33,11 @@ export const t: Translations = {
   cvSections: {
     about: {
       title: 'About me',
-      summary:
-        '+3 years of experience as a web developer. I live in Granada, Spain.',
+      summary: [
+        'Psychologist and Web Application Developer.',
+        'Studious, restless and passionate about learning, which is why I embrace new challenges with great enthusiasm.',
+        'Since I began my training in computer science, I have acquired extensive knowledge in Java, Java EE, JSTL, Spring, PHP, Node.js, Swagger, OpenAPI, Laravel, MySQL, MongoDB (NoSQL), JavaScript, TypeScript, CSS, Sass, Vue, React, and Angular. I have also gained significant knowledge in Linux through self-study.',
+      ],
     },
     experience: {
       title: 'Experience',
@@ -40,8 +46,7 @@ export const t: Translations = {
           name: 'Knowmad Mood',
           position: 'Full Stack Developer',
           startDate: '2022-05-24',
-          summary:
-            'In progress',
+          summary: 'In progress',
           highlights: ['In progress'],
         },
       ],
@@ -51,13 +56,10 @@ export const t: Translations = {
       entries: [
         {
           institution: 'IES Campanillas - PTA',
-          url: '',
-          area: 'Software Engineer',
-          studyType: 'Certificate of Higher Education',
+          degree: 'Web App Development',
           startDate: '2019-09-01',
           endDate: '2021-06-24',
-          score: '10.0',
-          courses: [''],
+          summary: 'balblabaldsfasdf asdfa sdf adsf',
         },
       ],
     },

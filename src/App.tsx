@@ -1,8 +1,7 @@
 import { Header } from '@/components';
 import { ThemeProvider } from '@/components/theme';
 import { TranslationsProvider } from '@/components/translations';
-import { About } from '@/components/sections';
-import { Hero } from './components/sections/Hero';
+import { About, Education, Experience, Hero } from '@/components/sections';
 
 export default function App() {
   return (
@@ -12,12 +11,12 @@ export default function App() {
     >
       <TranslationsProvider>
         <div className='text-dark relative pt-2 dark:text-white'>
-    <div className='bg-light dark:bg-dark'
-    ></div>
           <div className='container mx-auto w-full md:max-w-2xl lg:max-w-4xl'>
             <Header />
             <main>
               <Hero />
+              <Experience />
+              <Education />
               <About />
             </main>
           </div>

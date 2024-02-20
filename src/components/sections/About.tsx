@@ -5,8 +5,18 @@ export function About() {
   const { t } = useTranslations();
   const { title, summary } = t.cvSections.about;
   return (
-    <Section title={title}>
-      <p className='section-text'>{summary}</p>
+    <Section
+      id='about'
+      title={title}
+    >
+      {summary.map((paragraph) => (
+        <p
+          key={paragraph.split(' ').slice(0, 2).join('+')}
+          className='section-text'
+        >
+          {paragraph}
+        </p>
+      ))}
     </Section>
   );
 }

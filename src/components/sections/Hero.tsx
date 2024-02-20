@@ -19,20 +19,21 @@ export function Hero() {
     LinkedIn: <LinkedIn />,
   };
 
-  const footerCss = 'text-xs text-muted-foreground flex gap-1 mt-2 justify-center md:justify-start';
+  const footerCss =
+    'text-xs text-muted-foreground flex gap-1 mt-2 justify-center md:justify-start';
   const footerLinksCss = cn(
     buttonVariants({ variant: 'outline', size: 'icon', className: 'size-8' }),
   );
 
   return (
-    <Section>
-      <div className='mt-10 flex items-center justify-between flex-col-reverse md:flex-row'>
-        <div className='flex flex-col gap-2 pr-8 justify-center md:justify-start'>
-          <h1 className='text-4xl text-center md:text-start'>{name}</h1>
-          <h2 className='text-balance text-lg font-medium text-muted-foreground text-center md:text-start'>
+    <Section id='hero'>
+      <div className='mt-10 flex flex-col-reverse items-center justify-between md:flex-row'>
+        <div className='flex flex-col justify-center gap-2 pr-8 md:justify-start'>
+          <h1 className='text-center text-4xl md:text-start'>{name}</h1>
+          <h2 className='text-balance text-center text-lg font-medium text-muted-foreground md:text-start'>
             {label}
           </h2>
-          <span className='flex items-center gap-1 text-xs text-muted-foreground justify-center md:justify-start'>
+          <span className='flex items-center justify-center gap-1 text-xs text-muted-foreground md:justify-start'>
             <Globe size={14} />
             {city}, {region}
           </span>

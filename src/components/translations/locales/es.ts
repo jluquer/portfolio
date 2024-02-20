@@ -1,10 +1,13 @@
 import { Translations } from '..';
 
 export const t: Translations = {
+  general: {
+    view: 'Ver',
+    present: 'Presente',
+  },
   basics: {
     name: 'Javier Luque Rodríguez',
-    label:
-      'Full Stack Developer con más de 3 años de experiencia',
+    label: 'Full Stack Developer con más de 3 años de experiencia',
     image: '/me.webp',
     email: 'javier.lr96@gmail.com',
     phone: '+34 664861333',
@@ -30,8 +33,11 @@ export const t: Translations = {
   cvSections: {
     about: {
       title: 'Sobre mí',
-      summary:
-        '+3 años de experiencia como Desarrollador Web. Vivo en Granada, España. He trabajado en diferentes entornos: desde acelerar el desarrollo de start-ups hasta liderando equipos de empresas multinacionales.',
+      summary: [
+        'Psicólogo y Técnico en Desarrollo de Aplicaciones Web.',
+        'Estudioso, inquieto y apasionado por el aprendizaje, por lo que afronto con muchas ganas los nuevos retos.',
+        'Desde que comencé mi formación en el ámbito de la informática he adquirido muchos conocimientos como Java, Java EE, JSTL, Spring, PHP, Node.js, Swagger, OpenAPI, Laravel, MySQL, MongoDB (NoSQL), JavaScript, TypeScript, CSS, Sass, Vue, React y Angular. También he adquirido muchos conocimientos en Linux de forma autodidacta.',
+      ],
     },
     experience: {
       title: 'Experiencia',
@@ -40,8 +46,7 @@ export const t: Translations = {
           name: 'Knowmad Mood',
           position: 'Full Stack Developer',
           startDate: '2022-05-24',
-          summary:
-            'En desarrollo.',
+          summary: 'En desarrollo.',
           highlights: ['En desarrollo'],
         },
       ],
@@ -51,13 +56,10 @@ export const t: Translations = {
       entries: [
         {
           institution: 'IES Campanillas - PTA',
-          url: '',
-          area: 'Software Engineer',
-          studyType: 'Certificate of Higher Education',
+          degree: 'Desarrollo de Aplicaciones Web',
           startDate: '2019-09-01',
           endDate: '2021-06-24',
-          score: '10.0',
-          courses: [''],
+          summary: 'balblabaldsfasdf asdfa sdf adsf',
         },
       ],
     },

@@ -56,26 +56,20 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.section-text {
-  @apply m-0 text-pretty text-sm leading-6 text-muted-foreground;
-}
-
-.print {
-  display: none !important;
-}
-
-@media print {
-  .no-print {
-    display: none !important;
-  }
-
-  .print {
-    display: block !important;
-  }
 
   article {
-    break-inside: avoid;
+    @apply print:break-before-avoid;
+  }
+}
+
+@layer utilities {
+  .section-text {
+    @apply text-pretty text-sm leading-6 text-muted-foreground;
+  }
+  .print {
+    @apply hidden print:block;
+  }
+  .no-print {
+    @apply print:hidden;
   }
 }
