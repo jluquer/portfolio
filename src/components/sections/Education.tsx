@@ -24,7 +24,9 @@ export function Education() {
                 <header className='mb-1 flex items-start justify-between'>
                   <div>
                     <h3 className='font-medium text-primary'>{degree}</h3>
-                    <h4 className='font-medium text-muted-foreground'>{institution}</h4>
+                    <h4 className='font-medium text-muted-foreground'>
+                      {institution}
+                    </h4>
                   </div>
 
                   <time className='min-w-[102px] text-right text-sm text-muted-foreground md:text-left'>
@@ -32,9 +34,18 @@ export function Education() {
                   </time>
                 </header>
 
-                <footer>
-                  <p className='section-text'>{summary}</p>
-                </footer>
+                {summary && (
+                  <footer>
+                    {summary.map((paragraph) => (
+                      <p
+                        key={paragraph.split(' ').slice(0, 2).join('+')}
+                        className='section-text'
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </footer>
+                )}
               </article>
             </li>
           );

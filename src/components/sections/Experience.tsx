@@ -36,7 +36,9 @@ export function Experience() {
                         <span>{name}</span>
                       )}
                     </h3>
-                    <h4 className='font-medium text-muted-foreground'>{position}</h4>
+                    <h4 className='font-medium text-muted-foreground'>
+                      {position}
+                    </h4>
                   </div>
 
                   <time className='min-w-[102px] text-right text-sm text-muted-foreground md:text-left'>
@@ -44,9 +46,18 @@ export function Experience() {
                   </time>
                 </header>
 
-                <footer>
-                  <p className='section-text'>{summary}</p>
-                </footer>
+                {summary && (
+                  <footer>
+                    {summary.map((paragraph) => (
+                      <p
+                        key={paragraph.split(' ').slice(0, 2).join('+')}
+                        className='section-text'
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </footer>
+                )}
               </article>
             </li>
           );

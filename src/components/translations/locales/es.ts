@@ -46,8 +46,20 @@ export const t: Translations = {
           name: 'Knowmad Mood',
           position: 'Full Stack Developer',
           startDate: '2022-05-24',
-          summary: 'En desarrollo.',
-          highlights: ['En desarrollo'],
+          summary: [
+            'Desarrollo de nuevas funcionalidades y mantenimiento de las webs chcarolinaherrera.com y purificaciongarcia.com',
+            'Stack tecnológico: Websphere Commerce V8, Java, Struts, Rest, Solr, DB2',
+            'Control de versiones con SVN, GitHub and GitLab',
+          ],
+        },
+        {
+          name: 'Viewnext',
+          position: 'Junior Full Stack Developer',
+          startDate: '2021-01-11',
+          endDate: '2022-04-23',
+          summary: [
+            'Desarrollo de nuevo portal interno de la Gerencia Informática de la Seguridad Social.',
+          ],
         },
       ],
     },
@@ -56,10 +68,19 @@ export const t: Translations = {
       entries: [
         {
           institution: 'IES Campanillas - PTA',
-          degree: 'Desarrollo de Aplicaciones Web',
+          degree: 'Grado Superior de Desarrollo de Aplicaciones Web',
           startDate: '2019-09-01',
           endDate: '2021-06-24',
-          summary: 'balblabaldsfasdf asdfa sdf adsf',
+          summary: [
+            'El Grado Superior en Desarrollo de Aplicaciones Web busca formar profesionales altamente cualificados para desempeñar su trabajo en el área de desarrollo de aplicaciones informáticas relacionadas con entornos Web (intranet, extranet e internet).',
+            'Principales tecnologías: Java, Java EE, SQL, MongoDB, PHP, Laravel, CSS, Sass, AdobeXD, Linux, Apache, Nginx, FTP, Docker, JavaScript, TypeScript, Vue, React, Angular, HTML5 y MySQL.',
+          ],
+        },
+        {
+          institution: 'Universidad de Málaga',
+          degree: 'Grado en Psicología',
+          startDate: '2015-09-15',
+          endDate: '2019-09-01',
         },
       ],
     },

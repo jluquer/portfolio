@@ -7,15 +7,10 @@ export interface Translations {
   cvSections: {
     about: { title: string; summary: string[] };
     experience: CVSection<Job>;
-    volunteer?: CVSection<Volunteer>;
     education: CVSection<Education>;
-    awards?: CVSection<Awards>;
-    certificates?: CVSection<Certificates>;
     publications?: CVSection<Publications>;
     skills: CVSection<Skills>;
     languages: CVSection<Languages>;
-    interests?: CVSection<Interests>;
-    references?: CVSection<References>;
     projects?: CVSection<Projects>;
   };
 }
@@ -55,40 +50,15 @@ interface Job {
   url?: string;
   startDate: DateStr;
   endDate?: DateStr | null;
-  summary: string;
-  highlights: Highlight;
+  summary?: string[];
 }
 
 type DateStr = `${string}-${string}-${string}`;
-
-interface Volunteer {
-  organization: string;
-  position: string;
-  url: string;
-  startDate: DateStr;
-  endDate: DateStr;
-  summary: string;
-  highlights: Highlight;
-}
 
 interface Skills {
   name: string;
   level: string;
   keywords: Array<string>;
-}
-
-interface Awards {
-  title: string;
-  date: string;
-  awarder: string;
-  summary: string;
-}
-
-interface Certificates {
-  name: string;
-  date: DateStr;
-  issuer: string;
-  url: string;
 }
 
 interface Publications {
@@ -104,7 +74,7 @@ interface Education {
   degree: string;
   startDate: DateStr;
   endDate?: DateStr;
-  summary?: string;
+  summary?: string[];
 }
 
 interface Languages {
@@ -136,16 +106,6 @@ interface Projects {
   highlights: Highlight;
   url: string;
   github?: string;
-}
-
-interface Interests {
-  name: string;
-  keywords: Array<string>;
-}
-
-interface References {
-  name: string;
-  reference: string;
 }
 
 type Highlight = Array<string>;
