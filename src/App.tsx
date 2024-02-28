@@ -15,9 +15,9 @@ export default function App() {
             <Header />
             <main>
               <Hero />
+              <About />
               <Experience />
               <Education />
-              <About />
             </main>
           </div>
         </div>

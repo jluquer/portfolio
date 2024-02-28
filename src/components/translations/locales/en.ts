@@ -15,9 +15,9 @@ export const t: Translations = {
     location: {
       address: '',
       postalCode: '18190',
-      city: 'Cenes De La Vega',
+      city: 'Cenes de la Vega',
       countryCode: 'ES',
-      region: 'España',
+      region: 'Spain',
     },
     profiles: [
       {
@@ -34,9 +34,9 @@ export const t: Translations = {
     about: {
       title: 'About me',
       summary: [
-        'Psychologist and Web Application Developer.',
-        'Studious, restless and passionate about learning, which is why I embrace new challenges with great enthusiasm.',
-        'Since I began my training in computer science, I have acquired extensive knowledge in Java, Java EE, JSTL, Spring, PHP, Node.js, Swagger, OpenAPI, Laravel, MySQL, MongoDB (NoSQL), JavaScript, TypeScript, CSS, Sass, Vue, React, and Angular. I have also gained significant knowledge in Linux through self-study.',
+        "Hello, I am Javi! I am currently a Web Developer with more than 3 years of experience. I am a very self-taught person, I love learning and I face challenges with great enthusiasm.",
+        'Since I began my training in the field of computing, I have acquired a lot of knowledge such as Java, Spring, React, Next.js, Node.js, Angular, PHP, Laravel, OpenAPI (Swagger), MySQL, MongoDB, JavaScript, TypeScript and CSS. ',
+        'In my free time I also spend a lot of time on Linux and learning new technologies.',
       ],
     },
     experience: {
@@ -46,7 +46,27 @@ export const t: Translations = {
           name: 'Knowmad Mood',
           position: 'Full Stack Developer',
           startDate: '2022-05-24',
-          summary: ['In progress'],
+          summary: [
+            'Development of new functionalities and maintenance of the websites chcarolinaherrera.com and purificaciongarcia.com',
+          ],
+          technologies: [
+            'Websphere Commerce V8',
+            'Java',
+            'Struts',
+            'Solr',
+            'DB2',
+            'Git',
+          ],
+        },
+        {
+          name: 'Viewnext',
+          position: 'Junior Full Stack Developer',
+          startDate: '2021-01-11',
+          endDate: '2022-04-23',
+          summary: [
+            'Development of a new internal portal for the Social Security IT Management',
+          ],
+          technologies: ['Angular', 'TypeScript', 'CSS'],
         },
       ],
     },
@@ -55,10 +75,38 @@ export const t: Translations = {
       entries: [
         {
           institution: 'IES Campanillas - PTA',
-          degree: 'Web App Development',
+          degree: 'Grado Superior de Desarrollo de Aplicaciones Web',
           startDate: '2019-09-01',
           endDate: '2021-06-24',
-          summary: ['balblabaldsfasdf asdfa sdf adsf'],
+          summary: [
+            'The Higher Degree in Web Application Development seeks to train highly qualified professionals to carry out their work in the area of development of computer applications related to Web environments (intranet, extranet and internet).',
+          ],
+          technologies: [
+            'Java',
+            'PHP',
+            'Laravel',
+            'CSS',
+            'AdobeXD',
+            'Linux',
+            'Apache',
+            'Nginx',
+            'FTP',
+            'Docker',
+            'JavaScript',
+            'TypeScript',
+            'Vue',
+            'React',
+            'Angular',
+            'SQL',
+            'MySQL',
+            'MongoDB',
+          ],
+        },
+        {
+          institution: 'Universidad de Málaga',
+          degree: 'Psychology Degree',
+          startDate: '2015-09-15',
+          endDate: '2019-09-01',
         },
       ],
     },

@@ -15,7 +15,7 @@ export const t: Translations = {
     location: {
       address: '',
       postalCode: '18190',
-      city: 'Cenes De La Vega',
+      city: 'Cenes de la Vega',
       countryCode: 'ES',
       region: 'España',
     },
@@ -34,9 +34,9 @@ export const t: Translations = {
     about: {
       title: 'Sobre mí',
       summary: [
-        'Psicólogo y Técnico en Desarrollo de Aplicaciones Web.',
-        'Estudioso, inquieto y apasionado por el aprendizaje, por lo que afronto con muchas ganas los nuevos retos.',
-        'Desde que comencé mi formación en el ámbito de la informática he adquirido muchos conocimientos como Java, Java EE, JSTL, Spring, PHP, Node.js, Swagger, OpenAPI, Laravel, MySQL, MongoDB (NoSQL), JavaScript, TypeScript, CSS, Sass, Vue, React y Angular. También he adquirido muchos conocimientos en Linux de forma autodidacta.',
+        '¡Hola, soy Javi! Actualmente soy Desarrollador Web con más de 3 años de experiencia. Soy una persona muy autodidacta, me encanta aprender y afronto los retos con muchas ganas.',
+        'Desde que comencé mi formación en el ámbito de la informática he adquirido muchos conocimientos como Java, Spring, React, Next.js, Node.js, Angular, PHP, Laravel, OpenAPI (Swagger), MySQL, MongoDB, JavaScript, TypeScript y CSS.',
+        'En mi tiempo libre también dedico mucho tiempo a Linux y aprender tecnologías nuevas.'
       ],
     },
     experience: {
@@ -48,8 +48,14 @@ export const t: Translations = {
           startDate: '2022-05-24',
           summary: [
             'Desarrollo de nuevas funcionalidades y mantenimiento de las webs chcarolinaherrera.com y purificaciongarcia.com',
-            'Stack tecnológico: Websphere Commerce V8, Java, Struts, Rest, Solr, DB2',
-            'Control de versiones con SVN, GitHub and GitLab',
+          ],
+          technologies: [
+            'Websphere Commerce V8',
+            'Java',
+            'Struts',
+            'Solr',
+            'DB2',
+            'Git',
           ],
         },
         {
@@ -58,8 +64,9 @@ export const t: Translations = {
           startDate: '2021-01-11',
           endDate: '2022-04-23',
           summary: [
-            'Desarrollo de nuevo portal interno de la Gerencia Informática de la Seguridad Social.',
+            'Desarrollo de nuevo portal interno de la Gerencia Informática de la Seguridad Social',
           ],
+          technologies: ['Angular', 'TypeScript', 'CSS'],
         },
       ],
     },
@@ -73,7 +80,26 @@ export const t: Translations = {
           endDate: '2021-06-24',
           summary: [
             'El Grado Superior en Desarrollo de Aplicaciones Web busca formar profesionales altamente cualificados para desempeñar su trabajo en el área de desarrollo de aplicaciones informáticas relacionadas con entornos Web (intranet, extranet e internet).',
-            'Principales tecnologías: Java, Java EE, SQL, MongoDB, PHP, Laravel, CSS, Sass, AdobeXD, Linux, Apache, Nginx, FTP, Docker, JavaScript, TypeScript, Vue, React, Angular, HTML5 y MySQL.',
+          ],
+          technologies: [
+            'Java',
+            'PHP',
+            'Laravel',
+            'CSS',
+            'AdobeXD',
+            'Linux',
+            'Apache',
+            'Nginx',
+            'FTP',
+            'Docker',
+            'JavaScript',
+            'TypeScript',
+            'Vue',
+            'React',
+            'Angular',
+            'SQL',
+            'MySQL',
+            'MongoDB',
           ],
         },
         {

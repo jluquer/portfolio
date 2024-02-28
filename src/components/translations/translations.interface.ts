@@ -8,7 +8,6 @@ export interface Translations {
     about: { title: string; summary: string[] };
     experience: CVSection<Job>;
     education: CVSection<Education>;
-    publications?: CVSection<Publications>;
     skills: CVSection<Skills>;
     languages: CVSection<Languages>;
     projects?: CVSection<Projects>;
@@ -51,6 +50,7 @@ interface Job {
   startDate: DateStr;
   endDate?: DateStr | null;
   summary?: string[];
+  technologies?: string[];
 }
 
 type DateStr = `${string}-${string}-${string}`;
@@ -61,20 +61,13 @@ interface Skills {
   keywords: Array<string>;
 }
 
-interface Publications {
-  name: string;
-  publisher: string;
-  releaseDate: DateStr;
-  url: string;
-  summary: string;
-}
-
 interface Education {
   institution: string;
   degree: string;
   startDate: DateStr;
   endDate?: DateStr;
   summary?: string[];
+  technologies?: string[];
 }
 
 interface Languages {
