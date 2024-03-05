@@ -1,13 +1,31 @@
-import { Translations } from '..';
+import { Translations } from '@/components/translations';
+import { yearsOfExperience } from '@/lib/utils';
 
 export const t: Translations = {
   general: {
-    view: 'Ver',
-    present: 'Presente',
+    view: 'View',
+    present: 'Present',
+    langPicked: 'Selected language is',
   },
+  commandMenu: {
+    header: {
+      press: 'Press',
+      openCmd: 'to open command menu',
+    },
+    buttonTitle: 'Open command menu',
+    inputPlaceholder: 'Type a command or search',
+    actions: {
+      heading: 'Actions',
+      print: 'Print',
+    },
+    theme: {
+      heading: 'Change theme',
+    },
+  },
+  languagePicker: { chooseLanguage: 'Choose a language' },
   basics: {
     name: 'Javier Luque Rodríguez',
-    label: 'Full Stack Developer con más de 3 años de experiencia',
+    label: `Full-Stack developer with more than ${yearsOfExperience} years of experience`,
     image: '/me.webp',
     email: 'javier.lr96@gmail.com',
     phone: '+34 664861333',
@@ -17,7 +35,7 @@ export const t: Translations = {
       postalCode: '18190',
       city: 'Cenes de la Vega',
       countryCode: 'ES',
-      region: 'España',
+      region: 'Spain',
     },
     profiles: [
       {
@@ -32,22 +50,22 @@ export const t: Translations = {
   },
   cvSections: {
     about: {
-      title: 'Sobre mí',
+      title: 'About me',
       summary: [
-        '¡Hola, soy Javi! Actualmente soy Desarrollador Web con más de 3 años de experiencia. Soy una persona muy autodidacta, me encanta aprender y afronto los retos con muchas ganas.',
-        'Desde que comencé mi formación en el ámbito de la informática he adquirido muchos conocimientos como Java, Spring, React, Next.js, Node.js, Angular, PHP, Laravel, OpenAPI (Swagger), MySQL, MongoDB, JavaScript, TypeScript y CSS.',
-        'En mi tiempo libre también dedico mucho tiempo a Linux y aprender tecnologías nuevas.'
+        'Hello, I am Javi! I am currently a Web Developer with more than 3 years of experience. I am a very self-taught person, I love learning and I face challenges with great enthusiasm.',
+        'Since I began my training in the field of computing, I have acquired a lot of knowledge such as Java, Spring, React, Next.js, Node.js, Angular, PHP, Laravel, OpenAPI (Swagger), MySQL, MongoDB, JavaScript, TypeScript and CSS. ',
+        'In my free time I also spend a lot of time on Linux and learning new technologies.',
       ],
     },
     experience: {
-      title: 'Experiencia',
+      title: 'Experience',
       entries: [
         {
           name: 'Knowmad Mood',
           position: 'Full Stack Developer',
           startDate: '2022-05-24',
           summary: [
-            'Desarrollo de nuevas funcionalidades y mantenimiento de las webs chcarolinaherrera.com y purificaciongarcia.com',
+            'Development of new functionalities and maintenance of the websites chcarolinaherrera.com and purificaciongarcia.com',
           ],
           technologies: [
             'Websphere Commerce V8',
@@ -64,14 +82,14 @@ export const t: Translations = {
           startDate: '2021-01-11',
           endDate: '2022-04-23',
           summary: [
-            'Desarrollo de nuevo portal interno de la Gerencia Informática de la Seguridad Social',
+            'Development of a new internal portal for the Social Security IT Management',
           ],
           technologies: ['Angular', 'TypeScript', 'CSS'],
         },
       ],
     },
     education: {
-      title: 'Educación',
+      title: 'Education',
       entries: [
         {
           institution: 'IES Campanillas - PTA',
@@ -79,7 +97,7 @@ export const t: Translations = {
           startDate: '2019-09-01',
           endDate: '2021-06-24',
           summary: [
-            'El Grado Superior en Desarrollo de Aplicaciones Web busca formar profesionales altamente cualificados para desempeñar su trabajo en el área de desarrollo de aplicaciones informáticas relacionadas con entornos Web (intranet, extranet e internet).',
+            'The Higher Degree in Web Application Development seeks to train highly qualified professionals to carry out their work in the area of development of computer applications related to Web environments (intranet, extranet and internet).',
           ],
           technologies: [
             'Java',
@@ -104,35 +122,35 @@ export const t: Translations = {
         },
         {
           institution: 'Universidad de Málaga',
-          degree: 'Grado en Psicología',
+          degree: 'Psychology Degree',
           startDate: '2015-09-15',
           endDate: '2019-09-01',
         },
       ],
     },
     skills: {
-      title: 'Habilidades',
+      title: 'Skills',
       entries: [
         {
           name: 'HTML',
           level: 'Master',
-          keywords: ['Desarrollo Web', 'Frontend'],
+          keywords: ['Web development', 'Frontend'],
         },
         {
           name: 'CSS',
           level: 'Master',
-          keywords: ['Desarrollo Web', 'Frontend', 'Diseño Responsive'],
+          keywords: ['Web development', 'Frontend', 'Diseño Responsive'],
         },
         {
           name: 'JavaScript',
           level: 'Master',
-          keywords: ['Desarrollo Web', 'Frontend', 'Backend', 'Fullstack'],
+          keywords: ['Web development', 'Frontend', 'Backend', 'Fullstack'],
         },
         {
           name: 'Tailwind',
-          level: 'Avanzado',
+          level: 'Advanced',
           keywords: [
-            'Desarrollo Web',
+            'Web development',
             'Frontend',
             'CSS Framework',
             'Diseño Responsive',
@@ -140,9 +158,9 @@ export const t: Translations = {
         },
         {
           name: 'TypeScript',
-          level: 'Avanzado',
+          level: 'Advanced',
           keywords: [
-            'Desarrollo Web',
+            'Web development',
             'Frontend',
             'Backend',
             'JavaScript Superset',
@@ -150,39 +168,29 @@ export const t: Translations = {
         },
         {
           name: 'Node',
-          level: 'Avanzado',
-          keywords: ['Desarrollo Web', 'Backend', 'JavaScript', 'Servidor'],
+          level: 'Advanced',
+          keywords: ['Web development', 'Backend', 'JavaScript', 'Servidor'],
         },
         {
           name: 'MySQL',
-          level: 'Avanzado',
-          keywords: [
-            'Bases de Datos',
-            'SQL',
-            'Almacenamiento de Datos',
-            'Backend',
-          ],
+          level: 'Advanced',
+          keywords: ['Bases de Datos', 'SQL', 'Database', 'Backend'],
         },
         {
           name: 'Git',
-          level: 'Avanzado',
-          keywords: ['Control de Versiones', 'Colaboración', 'Código Fuente'],
+          level: 'Advanced',
+          keywords: ['Version control', 'Colaboración', 'Source code'],
         },
         {
           name: 'GitHub',
-          level: 'Avanzado',
-          keywords: [
-            'Control de Versiones',
-            'Colaboración',
-            'Código Fuente',
-            'Git',
-          ],
+          level: 'Advanced',
+          keywords: ['Version control', 'Collaboration', 'Source code', 'Git'],
         },
         {
           name: 'Next.js',
-          level: 'Avanzado',
+          level: 'Advanced',
           keywords: [
-            'Desarrollo Web',
+            'Web development',
             'Frontend',
             'React Framework',
             'SSR',
@@ -191,21 +199,21 @@ export const t: Translations = {
         },
         {
           name: 'React',
-          level: 'Avanzado',
-          keywords: ['Desarrollo Web', 'Frontend', 'JavaScript Library', 'UI'],
+          level: 'Advanced',
+          keywords: ['Web development', 'Frontend', 'JavaScript Library', 'UI'],
         },
       ],
     },
     languages: {
-      title: 'Idiomas',
+      title: 'Languages',
       entries: [
         {
           language: 'Spanish',
-          fluency: 'Nativo',
+          fluency: 'Native speaker',
         },
         {
           language: 'English',
-          fluency: 'Avanzado',
+          fluency: 'Advanced',
         },
       ],
     },

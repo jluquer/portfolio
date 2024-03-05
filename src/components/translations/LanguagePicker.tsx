@@ -1,9 +1,4 @@
-import {
-  TranslationLocale,
-  translate,
-  useTranslations,
-  langs,
-} from '@/components/translations';
+import { useTranslations, langs } from '@/components/translations';
 import {
   Button,
   DropdownMenu,
@@ -11,17 +6,21 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../ui';
+import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 interface Props {
   size?: number;
+  commandMenu?: boolean;
 }
 
-export function LanguagePicker({ size }: Props) {
-  const { currentLang, setLang, setTranslations } = useTranslations();
-  const onChangeLang = async (lang: TranslationLocale) => {
-    setLang(lang);
-    setTranslations(await translate(lang));
-  };
+export function LanguagePicker({ size, commandMenu = false }: Props) {
+  const [langName, setLangName] = useState<string | undefined>();
+  const { currentLang, setLang, t } = useTranslations();
+
+  useEffect(() => {
+    setLangName(langs.find((l) => l.value === currentLang)?.label);
+  }, [currentLang]);
 
   const LangIcon = langs.find((lang) => lang.value === currentLang)?.Icon;
 
@@ -31,8 +30,9 @@ export function LanguagePicker({ size }: Props) {
         <DropdownMenuTrigger asChild>
           <Button
             variant='ghost'
-            size='icon'
-            title={`Selected language ${currentLang}`}
+            size={commandMenu ? 'default' : 'icon'}
+            title={`${t.general.langPicked} ${langName}`}
+            className={cn(commandMenu && 'pl-0')}
           >
             {LangIcon && (
               <LangIcon
@@ -40,13 +40,15 @@ export function LanguagePicker({ size }: Props) {
                 height={size}
               />
             )}
-            <span className='sr-only'>Set language</span>
+            <span className={cn(commandMenu ? 'ml-2' : 'sr-only')}>
+              {t.languagePicker.chooseLanguage}
+            </span>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align='end'>
           {langs.map((lang) => (
             <DropdownMenuItem
-              onClick={() => onChangeLang(lang.value)}
+              onClick={() => setLang(lang.value)}
               key={lang.value}
             >
               {lang.label}

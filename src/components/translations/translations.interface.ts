@@ -2,6 +2,25 @@ export interface Translations {
   general: {
     view: string;
     present: string;
+    langPicked: string;
+  };
+  commandMenu: {
+    header: {
+      press: string;
+      openCmd: string;
+    };
+    buttonTitle: string;
+    inputPlaceholder: string;
+    actions: {
+      heading: string;
+      print: string;
+    };
+    theme: {
+      heading: string;
+    };
+  };
+  languagePicker: {
+    chooseLanguage: string;
   };
   basics: Basics;
   cvSections: {

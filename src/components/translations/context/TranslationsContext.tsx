@@ -1,4 +1,4 @@
-import { FC, ReactNode, useReducer, createContext } from 'react';
+import { FC, ReactNode, useReducer, createContext, useMemo } from 'react';
 import {
   TranslationLocale,
   Translations,
@@ -10,7 +10,6 @@ interface ContextProps {
   currentLang: TranslationLocale;
   t: Translations;
   setLang: (lang: TranslationLocale) => void;
-  setTranslations: (t: Translations) => void;
 }
 
 export const TranslationsContext = createContext({} as ContextProps);
@@ -36,19 +35,15 @@ export const TranslationsProvider: FC<ProviderProps> = ({ children }) => {
     translationsInitialState,
   );
 
-  const setLang = (lang: TranslationLocale) => {
-    dispatch({ type: '[Translations] - SetLang', payload: lang });
+  const setLang = async (lang: TranslationLocale) => {
+    const t = (await translate(lang)) ?? {};
+    dispatch({ type: '[Translations] - SetLang', payload: { lang, t } });
     document.documentElement.lang = lang;
   };
 
-  const setTranslations = (t: Translations) => {
-    dispatch({ type: '[Translations] - SetTranslations', payload: t });
-  };
-
+  const value = useMemo(() => ({ ...state, setLang }), [state]);
   return (
-    <TranslationsContext.Provider
-      value={{ ...state, setLang, setTranslations }}
-    >
+    <TranslationsContext.Provider value={value}>
       {children}
     </TranslationsContext.Provider>
   );
