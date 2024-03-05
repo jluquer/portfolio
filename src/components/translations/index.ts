@@ -5,7 +5,7 @@ export type TranslationLocale = 'es' | 'en';
 export async function translate(
   lang: TranslationLocale,
 ): Promise<Translations> {
-  const { t } = await import(`../../locales/${lang}.tsx`);
+  const { t } = await import(`../../locales/${lang}.ts`);
   return t;
 }
 
