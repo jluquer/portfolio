@@ -13,7 +13,7 @@ import {
 import { Button } from '../ui';
 import { langs, useTranslations } from '../translations';
 import { Theme, useTheme } from '../theme';
-import { commandMenuKey } from '@/lib/constants';
+import { SOCIAL_ICONS, commandMenuKey } from '@/lib/constants';
 
 const iconsCss = 'mr-2 size-4';
 
@@ -73,6 +73,24 @@ export function CommandMenu() {
               <Printer className={iconsCss} />
               <span>{t.commandMenu.actions.print}</span>
             </CommandItem>
+          </CommandGroup>
+          <CommandGroup heading='Links'>
+            {t.basics.profiles.map(({ network, url }) => {
+              const SocialIcon = SOCIAL_ICONS[network];
+
+              return (
+                <CommandItem
+                  key={url}
+                  onSelect={() => {
+                    setOpen(false);
+                    window.open(url, '_blank');
+                  }}
+                >
+                  <SocialIcon className={iconsCss} />
+                  <span>{network}</span>
+                </CommandItem>
+              );
+            })}
           </CommandGroup>
           <CommandGroup heading={t.languagePicker.chooseLanguage}>
             {languages.map(({ Icon, value, label }) => (

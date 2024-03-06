@@ -1,9 +1,10 @@
 import { Globe, Mail, Phone } from 'lucide-react';
 import { Section } from '.';
 import { useTranslations } from '../translations';
-import { Github, LinkedIn } from '../Icons';
 import { buttonVariants } from '../ui';
 import { cn } from '@/lib/utils';
+import { SOCIAL_ICONS } from '@/lib/constants';
+import { createElement } from 'react';
 
 export function Hero() {
   const { t } = useTranslations();
@@ -13,11 +14,6 @@ export function Hero() {
   const linkedInfo = profiles.find(({ network }) => network === 'LinkedIn');
   const linkedUrl = linkedInfo?.url;
   const printInfo = [email, phone, linkedUrl].filter(Boolean).join(' • ');
-
-  const SOCIAL_ICONS: Record<string, React.JSX.Element> = {
-    GitHub: <Github />,
-    LinkedIn: <LinkedIn />,
-  };
 
   const footerCss =
     'text-xs text-muted-foreground flex gap-1 mt-2 justify-center md:justify-start';
@@ -62,20 +58,18 @@ export function Hero() {
                 <Phone size={16} />
               </a>
             )}
-            {profiles.map(({ network, url }) => {
-              return (
-                <a
-                  key={network + url}
-                  href={url}
-                  title={`Visitar el perfil de ${name} en ${network}`}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className={footerLinksCss}
-                >
-                  {SOCIAL_ICONS[network]}
-                </a>
-              );
-            })}
+            {profiles.map(({ network, url }) => (
+              <a
+                key={network + url}
+                href={url}
+                title={`Visitar el perfil de ${name} en ${network}`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className={footerLinksCss}
+              >
+                {createElement(SOCIAL_ICONS[network])}
+              </a>
+            ))}
           </footer>
         </div>
         <figure className='flex items-center justify-center'>

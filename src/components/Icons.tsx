@@ -1,4 +1,4 @@
-import { ReactElement, SVGProps } from 'react';
+import { SVGProps } from 'react';
 
 const flagSize = 24;
 
@@ -38,9 +38,7 @@ export const EnglishFlagIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export const SpanishFlagIcon = (
-  props: SVGProps<SVGSVGElement>,
-): ReactElement => (
+export const SpanishFlagIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width={flagSize}
@@ -139,12 +137,13 @@ export const SpanishFlagIcon = (
   </svg>
 );
 
-export const LinkedIn = () => (
+export const LinkedIn = (props: SVGProps<SVGSVGElement>) => (
   <svg
     height='16'
     width='16'
     viewBox='0 0 24 24'
     xmlns='http://www.w3.org/2000/svg'
+    {...props}
   >
     <title>LinkedIn</title>
     <path
@@ -154,12 +153,13 @@ export const LinkedIn = () => (
   </svg>
 );
 
-export const Github = () => (
+export const Github = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width='16'
     height='16'
     viewBox='0 0 24 24'
     xmlns='http://www.w3.org/2000/svg'
+    {...props}
   >
     <title>GitHub</title>
     <path
