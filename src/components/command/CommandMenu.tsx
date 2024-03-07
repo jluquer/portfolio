@@ -67,7 +67,9 @@ export function CommandMenu() {
             <CommandItem
               onSelect={() => {
                 setOpen(false);
-                window.print();
+                setTimeout(() => {
+                  window.print();
+                }, 500);
               }}
             >
               <Printer className={iconsCss} />
@@ -96,7 +98,10 @@ export function CommandMenu() {
             {languages.map(({ Icon, value, label }) => (
               <CommandItem
                 key={value}
-                onSelect={() => setLang(value)}
+                onSelect={() => {
+                  setOpen(false);
+                  setLang(value);
+                }}
               >
                 <Icon className={iconsCss} /> <span>{label}</span>
               </CommandItem>
