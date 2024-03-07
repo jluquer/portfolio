@@ -7,3 +7,7 @@ export const SOCIAL_ICONS: Record<string, (props: SVGProps<SVGSVGElement>) => Re
   GitHub: Github,
   LinkedIn: LinkedIn,
 };
+
+export const cv = {
+  image: '/me.webp',
+}

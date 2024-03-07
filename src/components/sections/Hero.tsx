@@ -3,13 +3,12 @@ import { Section } from '.';
 import { useTranslations } from '../translations';
 import { buttonVariants } from '../ui';
 import { cn } from '@/lib/utils';
-import { SOCIAL_ICONS } from '@/lib/constants';
+import { SOCIAL_ICONS, cv } from '@/lib/constants';
 import { createElement } from 'react';
 
 export function Hero() {
   const { t } = useTranslations();
-  const { name, label, location, image, profiles, email, phone } =
-    t.basics ?? {};
+  const { name, label, location, profiles, email, phone } = t.basics ?? {};
   const { city, region } = location;
   const linkedInfo = profiles.find(({ network }) => network === 'LinkedIn');
   const linkedUrl = linkedInfo?.url;
@@ -75,7 +74,7 @@ export function Hero() {
         <figure className='flex items-center justify-center'>
           <img
             className='aspect-square w-28 min-w-28 rounded-xl'
-            src={image}
+            src={cv.image}
             alt={name}
           />
         </figure>

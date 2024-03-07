@@ -26,7 +26,6 @@ export const t: Translations = {
   basics: {
     name: 'Javier Luque Rodríguez',
     label: `Full-Stack developer with more than ${yearsOfExperience} years of experience`,
-    image: '/me.webp',
     email: 'javier.lr96@gmail.com',
     phone: '+34 664861333',
     url: '',
