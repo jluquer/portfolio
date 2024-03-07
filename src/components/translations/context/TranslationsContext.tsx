@@ -1,10 +1,18 @@
-import { FC, ReactNode, useReducer, createContext, useMemo } from 'react';
+import {
+  ReactNode,
+  useReducer,
+  createContext,
+  useMemo,
+  useEffect,
+} from 'react';
 import {
   TranslationLocale,
   Translations,
   translate,
   translationsReducer,
 } from '..';
+import { t as tES } from '@/locales/es';
+import { t as tEN } from '@/locales/en';
 
 interface ContextProps {
   currentLang: TranslationLocale;
@@ -19,26 +27,37 @@ export interface TranslationsState {
   t: Translations;
 }
 
-const defaultLang: TranslationLocale = 'es';
+const initialLang: TranslationLocale =
+  (navigator.language as TranslationLocale) ?? 'es';
 const translationsInitialState: TranslationsState = {
-  currentLang: defaultLang,
-  t: (await translate(defaultLang)) ?? {},
+  currentLang: initialLang,
+  t: initialLang == 'es' ? tES : tEN,
 };
 
-interface ProviderProps {
+interface Props {
   children: ReactNode;
 }
 
-export const TranslationsProvider: FC<ProviderProps> = ({ children }) => {
+export function TranslationsProvider({ children }: Props) {
   const [state, dispatch] = useReducer(
     translationsReducer,
     translationsInitialState,
   );
 
+  useEffect(() => {
+    (async () => {
+      const t = await translate(state.currentLang);
+      setTranslations(t);
+    })();
+  }, [state.currentLang]);
+
   const setLang = async (lang: TranslationLocale) => {
-    const t = (await translate(lang)) ?? {};
-    dispatch({ type: '[Translations] - SetLang', payload: { lang, t } });
+    dispatch({ type: '[Translations] - SetLang', payload: lang });
     document.documentElement.lang = lang;
+  };
+
+  const setTranslations = (t: Translations) => {
+    dispatch({ type: '[Translations] - SetTranslations', payload: t });
   };
 
   const value = useMemo(() => ({ ...state, setLang }), [state]);
@@ -47,4 +66,4 @@ export const TranslationsProvider: FC<ProviderProps> = ({ children }) => {
       {children}
     </TranslationsContext.Provider>
   );
-};
+}

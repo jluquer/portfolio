@@ -1,9 +1,14 @@
 import { TranslationLocale, Translations, TranslationsState } from '..';
 
-type TranslationsActionType = {
-  type: '[Translations] - SetLang';
-  payload: { lang: TranslationLocale; t: Translations };
-};
+type TranslationsActionType =
+  | {
+      type: '[Translations] - SetLang';
+      payload: TranslationLocale;
+    }
+  | {
+      type: '[Translations] - SetTranslations';
+      payload: Translations;
+    };
 
 export const translationsReducer = (
   state: TranslationsState,
@@ -13,8 +18,12 @@ export const translationsReducer = (
     case '[Translations] - SetLang':
       return {
         ...state,
-        currentLang: action.payload.lang,
-        t: action.payload.t,
+        currentLang: action.payload,
+      };
+    case '[Translations] - SetTranslations':
+      return {
+        ...state,
+        t: action.payload,
       };
     default:
       return state;
