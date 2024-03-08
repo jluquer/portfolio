@@ -23,8 +23,10 @@ export function Hero() {
   return (
     <Section id='hero'>
       <div className='mt-10 flex flex-col-reverse items-center justify-between md:flex-row'>
-        <div className='flex flex-col justify-center gap-2 pr-8 md:justify-start'>
-          <h1 className='text-center text-4xl md:text-start'>{name}</h1>
+        <div className='flex flex-col justify-center gap-2 md:justify-start md:pr-8 print:pr-0'>
+          <h1 className='text-center text-4xl md:text-start print:mt-2'>
+            {name}
+          </h1>
           <h2 className='text-balance text-center text-lg font-medium text-muted-foreground md:text-start'>
             {label}
           </h2>
@@ -33,7 +35,9 @@ export function Hero() {
             {city}, {region}
           </span>
 
-          <footer className={`print ${footerCss}`}>{printInfo}</footer>
+          <footer className={`print ${footerCss} text-center`}>
+            {printInfo}
+          </footer>
           <footer className={`no-print ${footerCss}`}>
             {email && (
               <a

@@ -50,7 +50,7 @@ export function CommandMenu() {
       <Button
         variant={'outline'}
         size='icon'
-        className='fixed bottom-5 right-4 rounded-full'
+        className='no-print fixed bottom-5 right-4 rounded-full'
         title={t.commandMenu.buttonTitle}
         onClick={() => setOpen(!open)}
       >
