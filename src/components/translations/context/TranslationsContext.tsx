@@ -5,12 +5,7 @@ import {
   useMemo,
   useEffect,
 } from 'react';
-import {
-  TranslationLocale,
-  Translations,
-  translate,
-  translationsReducer,
-} from '..';
+import { TranslationLocale, Translations, translationsReducer } from '..';
 import { t as tES } from '@/locales/es';
 import { t as tEN } from '@/locales/en';
 
@@ -27,10 +22,13 @@ export interface TranslationsState {
   t: Translations;
 }
 
-const initialLang: TranslationLocale =
-  (navigator.language as TranslationLocale) ?? 'es';
+const defaultLang: TranslationLocale = 'en';
+const availableLanguages: TranslationLocale[] = ['es', 'en'];
+const browserLocale = navigator.language.split(/[-_]/)[0] as TranslationLocale;
+const isBrowserLangAvailable = availableLanguages.includes(browserLocale);
+const initialLang = isBrowserLangAvailable ? browserLocale : defaultLang;
 const translationsInitialState: TranslationsState = {
-  currentLang: initialLang,
+  currentLang: initialLang ?? defaultLang,
   t: initialLang == 'es' ? tES : tEN,
 };
 
@@ -45,10 +43,7 @@ export function TranslationsProvider({ children }: Props) {
   );
 
   useEffect(() => {
-    (async () => {
-      const t = await translate(state.currentLang);
-      setTranslations(t);
-    })();
+    setTranslations(state.currentLang === 'es' ? tES : tEN);
   }, [state.currentLang]);
 
   const setLang = async (lang: TranslationLocale) => {
