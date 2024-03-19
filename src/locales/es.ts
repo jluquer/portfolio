@@ -228,5 +228,19 @@ export const t: Translations = {
         },
       ],
     },
+    projects: {
+      title: 'Proyectos',
+      entries: [
+        {
+          title: 'Pokedex',
+          techStack: ['TypeScript', 'Next.js', 'NextUI'],
+          description: 'Echale un vistazo a tus pokemons favoritos!',
+          link: {
+            label: 'pokedex-jluquer.vercel.app',
+            href: 'https://pokedex-jluquer.vercel.app/',
+          },
+        },
+      ],
+    },
   },
 };

@@ -111,12 +111,11 @@ type Language =
   | 'Bengali';
 
 interface Projects {
-  name: string;
-  isActive?: boolean;
+  title: string;
   description: string;
-  highlights: Highlight;
-  url: string;
-  github?: string;
+  techStack: string[];
+  link: {
+    label: string;
+    href: string;
+  };
 }
-
-type Highlight = Array<string>;

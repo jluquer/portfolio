@@ -1,7 +1,13 @@
 import { CommandMenu, Header } from '@/components';
 import { ThemeProvider } from '@/components/theme';
 import { TranslationsProvider } from '@/components/translations';
-import { About, Education, Experience, Hero } from '@/components/sections';
+import {
+  About,
+  Education,
+  Experience,
+  Hero,
+  Projects,
+} from '@/components/sections';
 import useMediaQuery from './hooks/useMediaQuery';
 
 export default function App() {
@@ -18,6 +24,7 @@ export default function App() {
               <About />
               <Experience />
               <Education />
+              <Projects />
             </main>
           </div>
         </div>
