@@ -27,7 +27,7 @@ export interface Translations {
     about: { title: string; summary: string[] };
     experience: CVSection<Job>;
     education: CVSection<Education>;
-    skills: CVSection<Skills>;
+    skills?: CVSection<Skills>;
     languages: CVSection<Languages>;
     projects?: CVSection<Projects>;
   };
@@ -110,10 +110,19 @@ type Language =
   | 'Hindi'
   | 'Bengali';
 
+type Skill =
+  | 'Next.js/React'
+  | 'Tailwind'
+  | 'TypeScript'
+  | 'NextUI'
+  | 'Prisma'
+  | 'Zustand'
+  | 'PostgreSQL';
+
 interface Projects {
   title: string;
   description: string;
-  techStack: string[];
+  techStack: Skill[];
   link: {
     label: string;
     href: string;
