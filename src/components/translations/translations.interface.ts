@@ -123,6 +123,7 @@ interface Projects {
   title: string;
   description: string;
   techStack: Skill[];
+  gitHref?: string;
   link: {
     label: string;
     href: string;

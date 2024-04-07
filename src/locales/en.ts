@@ -145,6 +145,7 @@ export const t: Translations = {
           title: 'Pokedex',
           techStack: ['TypeScript', 'Next.js/React', 'NextUI'],
           description: 'Take a look to your favorites pokemons!',
+          gitHref: 'https://github.com/jluquer/pokedex',
           link: {
             label: 'pokedex-jluquer.vercel.app',
             href: 'https://pokedex-jluquer.vercel.app/',
@@ -161,6 +162,7 @@ export const t: Translations = {
             'Prisma',
           ],
           description: "Clone of Tesla's official clothing store",
+          gitHref: 'https://github.com/jluquer/teslo-shop',
           link: {
             label: 'jluquer-teslo-shop.vercel.app',
             href: 'https://jluquer-teslo-shop.vercel.app/',
