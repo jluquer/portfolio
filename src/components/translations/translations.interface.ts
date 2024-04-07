@@ -29,7 +29,9 @@ export interface Translations {
     education: CVSection<Education>;
     skills?: CVSection<Skills>;
     languages: CVSection<Languages>;
-    projects?: CVSection<Projects>;
+    projects?: CVSection<Projects> & {
+      goToSourceCode: (projectName: string) => string;
+    };
   };
 }
 

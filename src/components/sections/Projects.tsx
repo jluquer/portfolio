@@ -17,7 +17,8 @@ export function Projects() {
               title={project.title}
               description={project.description}
               tags={project.techStack}
-              link={'link' in project ? project.link.href : undefined}
+              link={project?.link?.href}
+              gitLink={project.gitHref}
             />
           );
         })}

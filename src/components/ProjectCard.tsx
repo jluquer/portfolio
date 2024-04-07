@@ -6,20 +6,30 @@ import {
   CardTitle,
 } from './ui/card';
 import { Badge } from './ui/badge';
+import { Github } from './Icons';
+import { useTranslations } from './translations';
 
 interface Props {
   title: string;
   description: string;
   tags: readonly string[];
   link?: string;
+  gitLink?: string;
 }
 
-export function ProjectCard({ title, description, tags, link }: Props) {
+export function ProjectCard({
+  title,
+  description,
+  tags,
+  link,
+  gitLink,
+}: Props) {
+  const { t } = useTranslations();
   return (
     <Card className='flex flex-col overflow-hidden border border-muted p-3'>
-      <CardHeader className=''>
+      <CardHeader>
         <div className='space-y-1'>
-          <CardTitle className='text-base'>
+          <CardTitle className='flex items-center gap-2 text-base'>
             {link ? (
               <a
                 href={link}
@@ -31,6 +41,16 @@ export function ProjectCard({ title, description, tags, link }: Props) {
               </a>
             ) : (
               title
+            )}
+            {gitLink && (
+              <a
+                href={gitLink}
+                className='no-print'
+                target='_blank'
+                title={t.cvSections.projects?.goToSourceCode(title)}
+              >
+                <Github />
+              </a>
             )}
           </CardTitle>
           <div className='hidden font-mono text-xs underline print:visible'>

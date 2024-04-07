@@ -140,6 +140,8 @@ export const t: Translations = {
     },
     projects: {
       title: 'Projects',
+      goToSourceCode: (projectName) =>
+        `See the source code of the project ${projectName}`,
       entries: [
         {
           title: 'Pokedex',
