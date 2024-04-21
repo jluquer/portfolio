@@ -145,7 +145,7 @@ export const t: Translations = {
       entries: [
         {
           title: 'Pokedex',
-          techStack: ['TypeScript', 'Next.js/React', 'NextUI'],
+          techStack: ['TypeScript', 'Next.js/React', 'NextUI', 'Tailwind'],
           description: 'Take a look to your favorites pokemons!',
           gitHref: 'https://github.com/jluquer/pokedex',
           link: {
