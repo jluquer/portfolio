@@ -65,11 +65,11 @@ export interface Profile {
 
 interface Company {
   company: string;
+  url?: string;
 }
 
 interface CompanyProject {
   title: string;
-  url?: string;
   start: DateStr;
   end?: DateStr | null;
   description?: string[];

@@ -63,6 +63,7 @@ export const t: Translations = {
       entries: [
         {
           company: 'Knowmad Mood',
+          url: 'https://www.knowmadmood.com/es',
           title: 'Full Stack Developer',
           start: '2022-05-24',
           description: [
@@ -79,6 +80,7 @@ export const t: Translations = {
         },
         {
           company: 'Viewnext',
+          url: 'https://www.viewnext.com/',
           title: 'Junior Full Stack Developer',
           start: '2021-01-11',
           end: '2022-04-23',
