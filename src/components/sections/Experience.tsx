@@ -12,23 +12,13 @@ export function Experience() {
     >
       <ul className='flex flex-col gap-6'>
         {entries.map(
-          ({
-            name,
-            startDate,
-            endDate,
-            summary,
-            position,
-            url,
-            technologies,
-          }) => {
-            const startYear = new Date(startDate).getFullYear();
+          ({ company, start, end, description, title, url, technologies }) => {
+            const startYear = new Date(start).getFullYear();
             const endYear =
-              endDate != null
-                ? new Date(endDate).getFullYear()
-                : t.general.present;
+              end != null ? new Date(end).getFullYear() : t.general.present;
             const years = `${startYear} - ${endYear}`;
             return (
-              <li key={startDate}>
+              <li key={start}>
                 <article>
                   <header className='mb-1 flex items-start justify-between'>
                     <div>
@@ -36,18 +26,18 @@ export function Experience() {
                         {url ? (
                           <a
                             href={url}
-                            title={`${t.general.view} ${name}`}
+                            title={`${t.general.view} ${company}`}
                             target='_blank'
                             className='text-primary hover:cursor-pointer hover:underline'
                           >
-                            {name}
+                            {company}
                           </a>
                         ) : (
-                          <span>{name}</span>
+                          <span>{company}</span>
                         )}
                       </h3>
                       <h4 className='font-medium text-muted-foreground'>
-                        {position}
+                        {title}
                       </h4>
                     </div>
 
@@ -56,9 +46,9 @@ export function Experience() {
                     </time>
                   </header>
 
-                  {summary && (
+                  {description && (
                     <footer>
-                      {summary.map((paragraph) => (
+                      {description.map((paragraph) => (
                         <p
                           key={paragraph.split(' ').slice(0, 2).join('+')}
                           className='section-text'

@@ -60,10 +60,10 @@ export const t: Translations = {
       title: 'Experience',
       entries: [
         {
-          name: 'Knowmad Mood',
-          position: 'Full Stack Developer',
-          startDate: '2022-05-24',
-          summary: [
+          company: 'Knowmad Mood',
+          title: 'Full Stack Developer',
+          start: '2022-05-24',
+          description: [
             'Development of new functionalities and maintenance of the websites chcarolinaherrera.com and purificaciongarcia.com',
           ],
           technologies: [
@@ -76,11 +76,11 @@ export const t: Translations = {
           ],
         },
         {
-          name: 'Viewnext',
-          position: 'Junior Full Stack Developer',
-          startDate: '2021-01-11',
-          endDate: '2022-04-23',
-          summary: [
+          company: 'Viewnext',
+          title: 'Junior Full Stack Developer',
+          start: '2021-01-11',
+          end: '2022-04-23',
+          description: [
             'Development of a new internal portal for the Social Security IT Management',
           ],
           technologies: ['Angular', 'TypeScript', 'CSS'],

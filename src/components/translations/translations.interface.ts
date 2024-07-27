@@ -25,7 +25,7 @@ export interface Translations {
   basics: Basics;
   cvSections: {
     about: { title: string; summary: string[] };
-    experience: CVSection<Job>;
+    experience: CVSection<SingleProjectCompany | MultipleProjectsCompany>;
     education: CVSection<Education>;
     skills?: CVSection<Skills>;
     languages: CVSection<Languages>;
@@ -63,14 +63,24 @@ export interface Profile {
   url: string;
 }
 
-interface Job {
-  name: string;
-  position: string;
+interface Company {
+  company: string;
+}
+
+interface CompanyProject {
+  title: string;
   url?: string;
-  startDate: DateStr;
-  endDate?: DateStr | null;
-  summary?: string[];
+  start: DateStr;
+  end?: DateStr | null;
+  description?: string[];
   technologies?: string[];
+  links?: string[];
+}
+
+interface SingleProjectCompany extends Company, CompanyProject {}
+
+interface MultipleProjectsCompany extends Company, CompanyProject {
+  projects: Array<CompanyProject>;
 }
 
 type DateStr = `${string}-${string}-${string}`;
