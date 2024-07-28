@@ -68,22 +68,23 @@ interface Company {
   url?: string;
 }
 
-interface CompanyProject {
+export interface CompanyProject {
+  projectName: string;
   title: string;
   start: DateStr;
-  end?: DateStr | null;
+  end?: DateStr;
   description?: string[];
   technologies?: string[];
   links?: string[];
 }
 
-interface SingleProjectCompany extends Company, CompanyProject {}
+export interface SingleProjectCompany extends Company, CompanyProject {}
 
-interface MultipleProjectsCompany extends Company, CompanyProject {
+export interface MultipleProjectsCompany extends Company {
   projects: Array<CompanyProject>;
 }
 
-type DateStr = `${string}-${string}-${string}`;
+export type DateStr = `${string}-${string}-${string}`;
 
 interface Skills {
   name: string;

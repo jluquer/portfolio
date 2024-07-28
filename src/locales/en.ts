@@ -62,24 +62,49 @@ export const t: Translations = {
         {
           company: 'Knowmad Mood',
           url: 'https://www.knowmadmood.com/en',
-          title: 'Full Stack Developer',
-          start: '2022-05-24',
-          description: [
-            'Development of new functionalities and maintenance of the websites chcarolinaherrera.com and purificaciongarcia.com',
-          ],
-          technologies: [
-            'Websphere Commerce V8',
-            'Java',
-            'Struts',
-            'Solr',
-            'DB2',
-            'Git',
+          projects: [
+            {
+              projectName: 'Atresmedia',
+              title: 'Backend Developer',
+              start: '2024-06-05',
+              description: [
+                'Decoupling of a custom GWT based CMS to an API architecture',
+                'Coordination with the frontend team to ensure a smooth transition',
+              ],
+              technologies: [
+                'Java',
+                'Spring',
+                'Microservices',
+                'Docker',
+                'Oracle',
+                'MongoDB',
+              ],
+            },
+            {
+              projectName: 'Sociedad Textil Lonia',
+              title: 'Software Developer',
+              start: '2022-05-24',
+              end: '2024-05-31',
+              description: [
+                'Development of new functionalities and maintenance of the websites chcarolinaherrera.com and purificaciongarcia.com',
+              ],
+              technologies: [
+                'Websphere Commerce V8',
+                'Java',
+                'Struts',
+                'Solr',
+                'DB2',
+                'Git',
+              ],
+            },
           ],
         },
         {
           company: 'Viewnext',
+          projectName:
+            'Information Technology Management for the Social Security',
           url: 'https://www.viewnext.com/',
-          title: 'Junior Full Stack Developer',
+          title: 'Junior Software Developer',
           start: '2021-01-11',
           end: '2022-04-23',
           description: [

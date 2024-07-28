@@ -64,24 +64,48 @@ export const t: Translations = {
         {
           company: 'Knowmad Mood',
           url: 'https://www.knowmadmood.com/es',
-          title: 'Full Stack Developer',
-          start: '2022-05-24',
-          description: [
-            'Desarrollo de nuevas funcionalidades y mantenimiento de las webs chcarolinaherrera.com y purificaciongarcia.com',
-          ],
-          technologies: [
-            'Websphere Commerce V8',
-            'Java',
-            'Struts',
-            'Solr',
-            'DB2',
-            'Git',
+          projects: [
+            {
+              projectName: 'Atresmedia',
+              title: 'Desarrollador Backend',
+              start: '2024-06-05',
+              description: [
+                'Desacoplamiento de CMS propio basado en GWT hacia una arquitectura API',
+                'Coordinación con el equipo de frontend para asegurar una transición fluida',
+              ],
+              technologies: [
+                'Java',
+                'Spring',
+                'Microservicios',
+                'Docker',
+                'Oracle',
+                'MongoDB',
+              ],
+            },
+            {
+              projectName: 'Sociedad Textil Lonia',
+              title: 'Desarrollador Software',
+              start: '2022-05-24',
+              end: '2024-05-31',
+              description: [
+                'Desarrollo de nuevas funcionalidades y mantenimiento de las webs chcarolinaherrera.com y purificaciongarcia.com',
+              ],
+              technologies: [
+                'Websphere Commerce V8',
+                'Java',
+                'Struts',
+                'Solr',
+                'DB2',
+                'Git',
+              ],
+            },
           ],
         },
         {
           company: 'Viewnext',
           url: 'https://www.viewnext.com/',
-          title: 'Junior Full Stack Developer',
+          projectName: 'Gerencia de Informática de la Seguridad Social',
+          title: 'Desarrollador Software Junior',
           start: '2021-01-11',
           end: '2022-04-23',
           description: [
